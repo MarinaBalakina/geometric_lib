@@ -1,21 +1,79 @@
+## Как пользоваться калькулятором:
 
-# How to use calculator:
-1. Run `python calculate.py`
-2. Enter the figure name. Available are Circle, Square.
-3. Enter the function: Area or Perimeter.
-4. Enter figure sizes. Radius for circle, one side for square.
-5. Get the answer!
+1. Запустите python calculate.py
+2. Введите название фигуры. Доступны: Circle или Square.
+3. Введите функцию: Area или Perimeter.
+4. Введите размеры фигуры. Радиус для круга, одна сторона для квадрата.
+5. Получите ответ!
 
-# Math formulas
-## Area
-- Circle: `S = πR²`
-- Rectangle: `S = ab`
-- Square: `S = a²`
-- Triangle: `S = sqrt(p * (p-a) * (p-b) * (p-c))` where p is semiperimeter
+## Математические формулы
 
-## Perimeter
-- Circle: `P = 2πR`
-- Rectangle: `P = 2a + 2b`
-- Square: `P = 4a`
-- Triangle: `P = a + b + c`
+## Площадь
+- Круг: S = πR²
+- Прямоугольник: S = ab
+- Квадрат: S = a²
+- Треугольник: S = sqrt(p * (p-a) * (p-b) * (p-c)), где p - полупериметр
 
+## Периметр
+- Круг: P = 2πR
+- Прямоугольник: P = 2a + 2b
+- Квадрат: P = 4a
+- Треугольник: P = a + b + c
+
+## Общее описание решения
+
+Проект позволяет вычислить периметр и площадь круга или квадрата 
+
+- Площадь круга: S = pi*r^2.
+- Периметр круга: P = 2pi * r.
+- Площадь квадрата:S = a^2.
+- Периметр квадрата: P = 4*a.
+
+## Описание функций
+
+### Функция для вычисления площади и периметра круга
+import math
+def area (r):
+return math.pi * r * r
+def perimeter(r):
+return 2 * math.pi * r
+#### Пример вызова:
+a = area(10)
+p = perimeter(10)
+print(a)  # Функция выведет 314.159265359
+print(p) # Функция выведет 62.8318530718
+
+
+### Функция для вычисления площади и периметра квадрата
+def area(a):
+return a*a
+def perimeter(a):
+return 4*a
+
+#### Пример вызова:
+a = area(8)
+p = perimeter(8)
+print(a)  # Функция выведет 64
+print(p)  # Функция выведет 32
+
+
+### Функция для вычисления площади и периметра треугольника
+def area(a,b,c):
+return (a + b + c) / 2
+def perimeter(a,b,c):
+return a + b + c
+
+#### Пример вызова:
+a = area(5,5,5)
+p = perimeter(5,5,5)
+print(a)  # Функция выведет 7,5
+print(p)  # Функция выведет 15
+
+
+## История изменений проекта
+
+- d76db2a L-04: Add calculate.py
+- 51c40eb L-04: Doc updated for triangle
+- d080c78 L-04: Triangle added
+- d078c8d L-03: Docs added
+- 8ba9aeb L-03: Circle and square added
