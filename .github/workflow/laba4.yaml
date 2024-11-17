@@ -11,14 +11,16 @@ on:
       - release
       - develop
 
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     env:
-      FIO: "Балакина Марина Александровна"
+      FULL_NAME: "Балакина Марина Александровна"
       GROUP_NUMBER: "M3114"
-      PYTHONPATH: "${{ github.workspace }}"
+     
 
     steps:
       - name: Checkout repository
@@ -41,7 +43,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run pytest
-        run: pytest --maxfail=5 --disable-warnings
+        run: |
+          pytest
 
       - name: Run black
         run: |
